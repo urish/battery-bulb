@@ -4,6 +4,8 @@ Battery Powered Magic Blue Bulb - Charging + Power Supply module
 
 Learn more about it in my blog post - [How To Make Your Very Own Wireless, Extra-Magic Smart Bulb](https://medium.com/@urish/how-to-make-your-very-own-wireless-extra-magic-smart-bulb-bb40b4e3a726).
 
+![Assembled PCB](https://cdn-images-1.medium.com/max/800/1*CuC-2DO55WOBuMfLo1Ed4w.png)
+
 ## Bill of Materials
 
 | Name | Quantity | Unit Price | Link | Comment |
