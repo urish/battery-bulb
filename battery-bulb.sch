@@ -3225,6 +3225,59 @@ bypass capacitor CMOS LDO Regulator</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="headers(2mm)">
+<packages>
+<package name="1X3">
+<rectangle x1="-2.254" y1="-0.254" x2="-1.746" y2="0.254" layer="21"/>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="21"/>
+<rectangle x1="1.746" y1="-0.254" x2="2.254" y2="0.254" layer="21"/>
+<pad name="1" x="-2" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="2" x="0" y="0" drill="0.8" diameter="1.4224"/>
+<pad name="3" x="2" y="0" drill="0.8" diameter="1.4224"/>
+</package>
+</packages>
+<symbols>
+<symbol name="1X3_HEADER">
+<wire x1="-2.54" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<text x="0" y="2.54" size="1.016" layer="94" font="vector" rot="MR0" align="center">01</text>
+<text x="-2.54" y="5.715" size="1.27" layer="95" font="vector">&gt;NAME</text>
+<text x="-2.54" y="-6.985" size="1.27" layer="96" font="vector">&gt;VALUE</text>
+<pin name="1" x="2.54" y="2.54" visible="off" length="point" rot="R180"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<text x="0" y="0" size="1.016" layer="94" font="vector" rot="MR0" align="center">02</text>
+<pin name="2" x="2.54" y="0" visible="off" length="point" rot="R180"/>
+<text x="0" y="-2.54" size="1.016" layer="94" font="vector" rot="MR0" align="center">03</text>
+<pin name="3" x="2.54" y="-2.54" visible="off" length="point" rot="R180"/>
+<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="1X3">
+<gates>
+<gate name="G$1" symbol="1X3_HEADER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X3">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3254,26 +3307,26 @@ bypass capacitor CMOS LDO Regulator</description>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="REG12" library="SparkFun-Connectors" deviceset="M03" device="LOCK"/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="BULB" library="SparkFun-Connectors" deviceset="M03" device="LOCK"/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="BULB" library="headers(2mm)" deviceset="1X3" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="GND4" gate="1" x="55.88" y="111.76" rot="R90"/>
+<instance part="GND4" gate="1" x="58.42" y="109.22"/>
 <instance part="BAT" gate="G$1" x="45.72" y="111.76"/>
-<instance part="S1" gate="1" x="68.58" y="114.3"/>
+<instance part="S1" gate="1" x="68.58" y="114.3" rot="R180"/>
 <instance part="U1" gate="G$1" x="55.88" y="86.36"/>
 <instance part="J1" gate="G$1" x="101.6" y="83.82"/>
-<instance part="GND6" gate="1" x="91.44" y="83.82" rot="R270"/>
+<instance part="GND6" gate="1" x="91.44" y="81.28"/>
 <instance part="C1" gate="G$1" x="33.02" y="88.9" rot="R90"/>
 <instance part="GND7" gate="1" x="22.86" y="88.9" smashed="yes" rot="R270">
 <attribute name="VALUE" x="20.32" y="91.44" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="C2" gate="G$1" x="-20.32" y="109.22" rot="R90"/>
-<instance part="GND8" gate="1" x="-27.94" y="109.22" rot="R270"/>
+<instance part="GND8" gate="1" x="-30.48" y="109.22" rot="R270"/>
 <instance part="R2" gate="G$1" x="73.66" y="86.36" rot="R180"/>
 <instance part="GND9" gate="1" x="81.28" y="86.36" rot="R90"/>
 <instance part="GND10" gate="1" x="68.58" y="78.74"/>
@@ -3286,29 +3339,30 @@ bypass capacitor CMOS LDO Regulator</description>
 <instance part="GND11" gate="1" x="5.08" y="127" rot="R180"/>
 <instance part="REG12" gate="J$1" x="63.5" y="60.96" rot="R180"/>
 <instance part="GND1" gate="1" x="45.72" y="60.96" rot="R270"/>
-<instance part="BULB" gate="J$1" x="20.32" y="60.96" rot="R180"/>
 <instance part="GND2" gate="1" x="-2.54" y="60.96" rot="R270"/>
+<instance part="BULB" gate="G$1" x="15.24" y="60.96" rot="R180"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="VDD" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="OUT"/>
-<wire x1="-5.08" y1="109.22" x2="-17.78" y2="109.22" width="0.1524" layer="91"/>
-<label x="-12.7" y="109.22" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="BULB" gate="J$1" pin="3"/>
 <wire x1="12.7" y1="58.42" x2="2.54" y2="58.42" width="0.1524" layer="91"/>
 <label x="2.54" y="58.42" size="1.778" layer="95"/>
+<pinref part="BULB" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="C2" gate="G$1" pin="2"/>
+<pinref part="U2" gate="G$1" pin="OUT"/>
+<wire x1="-17.78" y1="109.22" x2="-5.08" y2="109.22" width="0.1524" layer="91"/>
+<label x="-12.7" y="109.22" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="GND6" gate="1" pin="GND"/>
 <pinref part="J1" gate="G$1" pin="GND"/>
-<wire x1="93.98" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
@@ -3332,10 +3386,12 @@ bypass capacitor CMOS LDO Regulator</description>
 <segment>
 <pinref part="BAT" gate="G$1" pin="1"/>
 <pinref part="GND4" gate="1" pin="GND"/>
+<wire x1="58.42" y1="111.76" x2="53.34" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
 <pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="-27.94" y1="109.22" x2="-25.4" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
@@ -3344,8 +3400,8 @@ bypass capacitor CMOS LDO Regulator</description>
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
-<pinref part="BULB" gate="J$1" pin="2"/>
 <wire x1="0" y1="60.96" x2="12.7" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="BULB" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VIN" class="0">
@@ -3357,22 +3413,24 @@ bypass capacitor CMOS LDO Regulator</description>
 <wire x1="17.78" y1="109.22" x2="27.94" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="114.3" x2="17.78" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="114.3" x2="17.78" y2="109.22" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="S1" gate="1" pin="O"/>
-<wire x1="73.66" y1="116.84" x2="86.36" y2="116.84" width="0.1524" layer="91"/>
-<label x="76.2" y="116.84" size="1.778" layer="95"/>
+<junction x="17.78" y="109.22"/>
 </segment>
 <segment>
 <pinref part="REG12" gate="J$1" pin="3"/>
 <wire x1="55.88" y1="58.42" x2="50.8" y2="58.42" width="0.1524" layer="91"/>
 <label x="50.8" y="58.42" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="S1" gate="1" pin="P"/>
+<wire x1="71.12" y1="114.3" x2="81.28" y2="114.3" width="0.1524" layer="91"/>
+<label x="76.2" y="114.3" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VBUS" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="VBUS"/>
 <wire x1="99.06" y1="86.36" x2="91.44" y2="86.36" width="0.1524" layer="91"/>
+<label x="93.98" y="88.9" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="VIN"/>
@@ -3394,9 +3452,11 @@ bypass capacitor CMOS LDO Regulator</description>
 </segment>
 <segment>
 <pinref part="BAT" gate="G$1" pin="2"/>
-<pinref part="S1" gate="1" pin="P"/>
-<wire x1="53.34" y1="114.3" x2="66.04" y2="114.3" width="0.1524" layer="91"/>
-<label x="53.34" y="114.3" size="1.778" layer="95"/>
+<wire x1="53.34" y1="114.3" x2="60.96" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="114.3" x2="60.96" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="S1" gate="1" pin="O"/>
+<wire x1="60.96" y1="111.76" x2="63.5" y2="111.76" width="0.1524" layer="91"/>
+<label x="55.88" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -3421,9 +3481,9 @@ bypass capacitor CMOS LDO Regulator</description>
 </net>
 <net name="12V" class="0">
 <segment>
-<pinref part="BULB" gate="J$1" pin="1"/>
 <wire x1="12.7" y1="63.5" x2="2.54" y2="63.5" width="0.1524" layer="91"/>
 <label x="2.54" y="63.5" size="1.778" layer="95"/>
+<pinref part="BULB" gate="G$1" pin="3"/>
 </segment>
 <segment>
 <pinref part="REG12" gate="J$1" pin="1"/>
